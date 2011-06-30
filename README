@@ -1,0 +1,27 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3650
+
+Check out the plugin's git repository at http://github.com/ndreynolds/vim-cakephp for the most recent updates.  You can also find instructions on installing with Git there.  The README, which you'll find at the link as well as in the zipfile here, contains a quick getting started guide.
+          
+cakephp.vim offers a lot of features that make building CakePHP apps with vim a lot easier.  It tries to be for CakePHP what rails.vim is for Ruby on Rails.  I wouldn't say it's there yet, but I'm slowly adding features as I identify the need for each one.
+
+***
+          
+What cakephp.vim offers:
+          
+-- Nothing to set.  No overhead.  When you call one of the plugin's commands, it will figure out where you are in the Cake app, if you're in one at all.  You don't need to set any variables.  Since everything is done at runtime, it doesn't slow down vim's startup time.
+          
+-- Knows the MVC structure.  When you call :Ccontroller without arguments from a model, the plugin knows to open that model's associated controller.  You're also free to specify any controller you like.
+          
+-- Tab completion everywhere.  If your .vimrc is set up for it, all the navigation commands have tab completion, so you can quickly see which views are available and switch to any given one in just a few key strokes.
+          
+-- No worrying about file extensions.  I figure CakePHP is standardized enough that you should never need to tell this plugin the file extension.  You'll also never need to type out '_controller'--both this and the extension are automatically taken care of when cakephp.vim opens files.
+          
+-- Commands for opening pretty much everything from logs (:Clog) to stylesheets ( :Ccss).
+          
+-- You can query the API docs (which unfortunately aren't stored locally by Cake) with :Cdoc [query], opening search results in the default web browser, or if you use the variant command, :CLdoc, it will open the results in Lynx.
+
+***
+          
+Windows support is a little flaky right now.  I'm trying to fix that.  Vim 7.0 and up on *nixes should work fine.  At any rate, it's been developed in 7.2 on Ubuntu and OSX.  Submit an issue on the Github repo (or email me) if you find any bugs.
+          
+The todo list includes adding extended syntax highlighting, adding a few missing nav commands (like :Clayout), adding a shortcut to grep the application, and possibly integrating bake (if I can think of a reasonable way to do that).  
