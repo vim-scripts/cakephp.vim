@@ -4,24 +4,24 @@ Check out the plugin's git repository at http://github.com/ndreynolds/vim-cakeph
           
 cakephp.vim offers a lot of features that make building CakePHP apps with vim a lot easier.  It tries to be for CakePHP what rails.vim is for Ruby on Rails.  I wouldn't say it's there yet, but I'm slowly adding features as I identify the need for each one.
 
-***
+
           
 What cakephp.vim offers:
           
--- Nothing to set.  No overhead.  When you call one of the plugin's commands, it will figure out where you are in the Cake app, if you're in one at all.  You don't need to set any variables.  Since everything is done at runtime, it doesn't slow down vim's startup time.
+-- Nothing to set.  The plugin will add an indicator to your statusline when you edit CakePHP files.  If you see the indicator, all the cakephp.vim commands are available, and the plugin already knows where your application's root is.
           
--- Knows the MVC structure.  When you call :Ccontroller without arguments from a model, the plugin knows to open that model's associated controller.  You're also free to specify any controller you like.
+-- Knows the MVC structure.  When you call :Ccontroller without arguments from a model, the plugin knows to open that model's associated controller.  You're also free to specify any controller you like.  Call :Cview from within a controller function and you'll jump to the corresponding view.
           
 -- Tab completion everywhere.  If your .vimrc is set up for it, all the navigation commands have tab completion, so you can quickly see which views are available and switch to any given one in just a few key strokes.
           
 -- No worrying about file extensions.  I figure CakePHP is standardized enough that you should never need to tell this plugin the file extension.  You'll also never need to type out '_controller'--both this and the extension are automatically taken care of when cakephp.vim opens files.
           
--- Commands for opening pretty much everything from logs (:Clog) to stylesheets ( :Ccss).
+-- Commands for opening everything from logs (:Clog) to stylesheets ( :Ccss) to components (:Ccomponent).
           
 -- You can query the API docs (which unfortunately aren't stored locally by Cake) with :Cdoc [query], opening search results in the default web browser, or if you use the variant command, :CLdoc, it will open the results in Lynx.
 
-***
+-- If you use the plugin a lot, you could play with the mappings.  I've mapped :Ccontroller to <leader>c and :Cmodel to <leader>m.  Jumping between model and controller doesn't get much faster.
+
+
           
-Windows support is a little flaky right now.  I'm trying to fix that.  Vim 7.0 and up on *nixes should work fine.  At any rate, it's been developed in 7.2 on Ubuntu and OSX.  Submit an issue on the Github repo (or email me) if you find any bugs.
-          
-The todo list includes adding extended syntax highlighting, adding a few missing nav commands (like :Clayout), adding a shortcut to grep the application, and possibly integrating bake (if I can think of a reasonable way to do that).  
+It's been developed on Ubuntu and OSX with Vim 7.2.  It should work fine on most *nixes with 7.0 and up.  I've also tested it briefly on Windows 7 using gvim and didn't have any problems.  Submit an issue on the Github repo (or email me) if you find any bugs.
